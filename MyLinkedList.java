@@ -73,4 +73,15 @@ public INode popLast() {
 		tempNode = tempNode.getNext();
 		return tempNode;
 	}
+public INode search(Integer key) {
+		INode tempNode = this.head;
+		INode found = null;
+		while (tempNode != null && tempNode.getNext() != null) {
+			if (tempNode.getKey() == key) {
+				found = tempNode;
+			}
+			tempNode = tempNode.getNext();
+		}
+		return found;
+	}
 }
