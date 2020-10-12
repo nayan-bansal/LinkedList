@@ -102,5 +102,27 @@ public int size() {
 			n = n.getNext();
 		}
 		return size;
+
+	}
+public <K extends Comparable<K>> void sortList() {
+		INode<K> current = this.head;
+		INode<K> index = null;
+		K temp;
+		if (this.head == null)
+			return;
+		else {
+			while (current != null) {
+				index = current.getNext();
+				while (index != null) {
+					if (maximum(index.getKey(), current.getKey())) {
+						temp = current.getKey();
+						current.setKey(index.getKey());
+						index.setKey(temp);
+					}
+					index = index.getNext();
+				}
+				current = current.getNext();
+			}
+		}
 	}
 }
