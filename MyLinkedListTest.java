@@ -89,5 +89,19 @@ public void given3NumbersInsertSecondInBetweenShouldPassTest() {
 				&& myLinkedList.tail.equals(mySecondNode);
 		Assert.assertTrue(result);
 	}
+@Test
+	public void givenElementWhenSearchShouldPassTest() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		INode found = myLinkedList.search(mySecondNode.getKey());
+		boolean result = myLinkedList.head.equals(found) || myLinkedList.head.getNext().equals(found)
+				|| myLinkedList.tail.equals(found);
+		Assert.assertTrue(result);
+	}
 
 }
