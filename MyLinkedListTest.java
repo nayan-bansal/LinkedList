@@ -119,4 +119,22 @@ public void given3NumbersInsertSecondInBetweenShouldPassTest() {
 				&& mySecondNode.getNext().equals(myThirdNode) && myLinkedList.tail.equals(myFourthNode);
 		Assert.assertTrue(result);
 	}
+@Test
+	public void givenElementWhenDeletedAfterSearchShouldPassTest() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(40);
+		MyNode<Integer> myFourthNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.append(myFourthNode);
+		myLinkedList.printMyNode();
+		INode found = myLinkedList.search(myThirdNode.getKey());
+		myLinkedList.removeParticularNode(found);
+		myLinkedList.printMyNode();
+		int size = myLinkedList.size();
+		System.out.println("size of LL " + size);
+	}
 }
