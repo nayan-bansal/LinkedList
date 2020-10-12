@@ -40,4 +40,15 @@ public void printnodes() {
 	
 }
 
+public void append(INode node) {
+	if(this.head == null)
+		this.head = node;
+	else if(this.tail == null)
+		this.tail = node;
+	else {
+		this.tail.setNext(node);
+		this.tail = node;
+	}
+}
+
 }
